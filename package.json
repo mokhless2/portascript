@@ -1,0 +1,57 @@
+{
+  "name": "portascript",
+  "version": "0.1.0",
+  "description": "Lint your package.json npm scripts for non-portable shell that breaks on Windows.",
+  "type": "module",
+  "bin": {
+    "portascript": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test",
+    "selfcheck": "node dist/cli.js .",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "npm-scripts",
+    "package.json",
+    "windows",
+    "cross-platform",
+    "portability",
+    "lint",
+    "linter",
+    "shell",
+    "cli",
+    "cross-env"
+  ],
+  "author": "mokhless2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mokhless2/portascript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mokhless2/portascript/issues"
+  },
+  "homepage": "https://github.com/mokhless2/portascript#readme",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0"
+  }
+}

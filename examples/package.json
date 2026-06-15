@@ -1,0 +1,14 @@
+{
+  "name": "demo-app",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rm -rf dist coverage",
+    "build": "NODE_ENV=production webpack && cp src/index.html dist/",
+    "prepare": "mkdir -p dist/assets",
+    "stamp": "echo $(git rev-parse --short HEAD) > dist/version.txt",
+    "test": "jest --silent 2> /dev/null",
+    "lint": "eslint 'src/**/*.ts'",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
+  }
+}
